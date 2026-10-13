@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Bank Management System"
+message: "If you use this project, please cite this repository."
+type: software
+authors:
+  - family-names: Kumar
+    given-names: Brajesh
+    website: https://github.com/brajesh31
+repository-code: https://github.com/Brajesh31/Bank-Management-System
+license: MIT
+version: 0.1.0
+date-released: 2025-01-01
