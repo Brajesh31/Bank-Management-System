@@ -2,9 +2,14 @@
 
 ## [Unreleased]
 
-- Added project-specific governance and technical documentation.
-- Documented Swing screens, MySQL tables, build dependencies, and prototype security limitations.
+### Documentation
+- Expanded README with rendered badges, scope warnings, setup guidance, source-based feature inventory and Mermaid workflows.
+- Added architecture, database, transactions, requirements, journeys, testing, privacy, threat model, security review, performance, accessibility, deployment, backup and operations documentation.
+- Added diagram sources, documentation index and reusable engineering templates.
+- Added prioritized technical debt register.
 
-## [0.1.0] - 2025-01-01
+### Repository quality
+- Added read-only documentation checks and GitHub issue forms.
+- Preserved existing Java source, compiled classes, JAR dependencies and image assets.
 
-- Initial Java Swing ATM and account-registration prototype.
+No new application release is declared by these documentation changes.
