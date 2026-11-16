@@ -1,0 +1,10 @@
+erDiagram
+ SIGNUP ||--o| SIGNUP_TWO : application_form
+ SIGNUP ||--o| SIGNUP_THREE : application_form
+ SIGNUP_THREE ||--o| LOGIN : generated_credentials
+ LOGIN ||--o{ DEPOSIT : pin_lookup_convention
+ SIGNUP { string form_no string name string email }
+ SIGNUP_TWO { string form_no string pan string aadhaar }
+ SIGNUP_THREE { string form_no string card_no string pin }
+ LOGIN { string form_no string card_no string pin }
+ DEPOSIT { string pin datetime date string type string amount }
