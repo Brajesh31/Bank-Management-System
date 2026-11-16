@@ -1,0 +1,11 @@
+flowchart TD
+ START([Open login window]) --> CHOOSE[Choose Sign Up]
+ CHOOSE --> P1[signUp: personal information]
+ P1 --> T1[(Insert signup)]
+ T1 --> P2[signUp2: additional information]
+ P2 --> T2[(Insert SignUpTwo)]
+ T2 --> P3[signUp3: account and services]
+ P3 --> GEN[Generate card/PIN values]
+ GEN --> T3[(Insert signupthree and login)]
+ T3 --> SHOW[Show generated values]
+ SHOW --> END([Continue to deposit screen])
