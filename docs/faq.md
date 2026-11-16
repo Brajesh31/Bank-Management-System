@@ -1,21 +1,21 @@
 # FAQ
 
-## Is this a real banking application?
+**Is this production banking software?** No. It is a Java Swing/MySQL learning prototype.
 
-No. It is a Swing/JDBC educational prototype and must not process real accounts or funds.
+**Is there a live demo?** No verified public demo. It requires a local JDK and MySQL database.
 
-## Which database does it use?
+**Which database is used?** MySQL database `bankSystem`.
 
-MySQL, using JDBC Connector/J.
+**Does the app read .env?** No. The example is not loaded; connection settings are hardcoded in `conn.java`.
 
-## What starts the application?
+**Is a SQL schema included?** No complete schema or migration is checked in.
 
-`bank.management.system.login`.
+**Does it use Maven or Gradle?** No build manifest is present.
 
-## Is there a web API?
+**Are automated tests included?** No application test suite is checked in.
 
-No. All interfaces are desktop Swing windows and direct JDBC operations.
+**Can I use real identity/card/PIN data?** No. Use synthetic values only.
 
-## Where should I report a vulnerability?
+**Why missing table/column errors?** Local schema must match SQL statements in source. Review [database.md](database.md).
 
-Use the private process in [SECURITY.md](../SECURITY.md), not a public issue.
+**Why can it not connect?** Check MySQL, host/port, database, local credential and Connector/J classpath. Never post passwords publicly.
