@@ -1,0 +1,29 @@
+name: 💡 Feature proposal
+description: Suggest an educational or engineering improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or learning goal
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: database
+    attributes:
+      label: Database/schema impact
+  - type: textarea
+    id: safety
+    attributes:
+      label: Security, privacy and accessibility impact
+  - type: textarea
+    id: tests
+    attributes:
+      label: Verification plan
