@@ -1,8 +1,6 @@
 # 📚 Documentation Index
 
-This guide documents the checked-in Java Swing/MySQL prototype and distinguishes observed implementation from proposed improvements.
-
-> **Safety:** Use synthetic data only. Never connect this prototype to real customer or financial data.
+> Safety: use synthetic data only. Never connect this prototype to real customer or financial data.
 
 ## Getting started
 - [Overview](overview.md)
@@ -36,7 +34,7 @@ This guide documents the checked-in Java Swing/MySQL prototype and distinguishes
 - [Deployment boundaries](deployment.md)
 - [Glossary](glossary.md)
 
-## Project governance
+## Governance
 - [Contribution guide](../CONTRIBUTING.md)
 - [Security policy](../SECURITY.md)
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
