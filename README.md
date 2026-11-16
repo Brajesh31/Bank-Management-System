@@ -50,11 +50,6 @@ Bank Management System is a desktop application built with **Java Swing**, **JDB
 - Mini statement display.
 - PIN update across the tables referenced by the source.
 
-### 🧩 Runtime dependencies
-- MySQL Connector/J for JDBC.
-- JCalendar date chooser.
-- PNG resources in `src/icons/`.
-
 The project does not provide ATM hardware integration, payment rails, UPI, NEFT, RTGS, internet banking, or a hosted backend.
 
 ## 🖼️ Existing interface assets
@@ -123,7 +118,7 @@ flowchart LR
     IMG[src/icons PNG resources] -. classpath .-> UI
 ```
 
-The design is a small desktop application. Screen classes issue SQL directly through a shared helper pattern. There is no separate API or service layer in the current source.
+The design is a small desktop application. Screen classes issue SQL directly through a helper pattern. There is no separate API or service layer in the current source.
 
 ## 📂 Project structure
 
@@ -207,8 +202,7 @@ java -cp "out;src;lib\mysql-connector-java-8.0.28.jar;lib\jcalendar-tz-1.3.3-4.j
 ```bash
 mkdir -p out
 find src -name '*.java' -print0 | xargs -0 javac \
-  -cp "lib/mysql-connector-java-8.0.28.jar:lib/jcalendar-tz-1.3.3-4.jar:src" \
-  -d out
+  -cp "lib/mysql-connector-java-8.0.28.jar:lib/jcalendar-tz-1.3.3-4.jar:src" -d out
 
 java -cp "out:src:lib/mysql-connector-java-8.0.28.jar:lib/jcalendar-tz-1.3.3-4.jar" \
   bank.management.system.login
@@ -296,5 +290,3 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md). Keep changes focused, use synthetic dat
 ## 📄 License
 
 MIT. See [LICENSE](LICENSE).
-
-Last updated: 2026-11-16 18:29 UTC
