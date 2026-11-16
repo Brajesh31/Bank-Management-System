@@ -1,0 +1,20 @@
+flowchart TD
+ INPUT[Enter card number and PIN] --> AUTH{login record matches?}
+ AUTH -->|No| FAIL[Show authentication failure]
+ FAIL --> INPUT
+ AUTH -->|Yes| MENU[mainClass menu]
+ MENU --> PICK{Operation}
+ PICK -->|Deposit| DEP[Insert Deposit row]
+ PICK -->|Withdraw/Fast cash| READ[Read ledger and calculate balance]
+ PICK -->|Balance| BAL[Calculate and display balance]
+ PICK -->|Mini statement| MINI[Read and display ledger]
+ PICK -->|PIN change| PIN[Update PIN-related rows]
+ READ --> CHECK{Enough balance?}
+ CHECK -->|No| INSUF[Show insufficient balance]
+ CHECK -->|Yes| WD[Insert Withdrawl row]
+ DEP --> MENU
+ INSUF --> MENU
+ WD --> MENU
+ BAL --> MENU
+ MINI --> MENU
+ PIN --> MENU
