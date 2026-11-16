@@ -1,7 +1,11 @@
 # Support
 
-This is an educational desktop prototype maintained on a best-effort basis.
+This repository is maintained as a Java Swing/MySQL learning example on a best-effort basis. It does not provide account, payment, or financial support.
 
-Read the [installation guide](docs/installation.md), [troubleshooting guide](docs/troubleshooting.md), and [FAQ](docs/faq.md) first. Sanitize logs and never share credentials, PINs, card numbers, or database dumps.
+Before opening a request:
+1. Read README and installation docs.
+2. Review troubleshooting and known issues.
+3. Reproduce with a disposable database and synthetic values.
+4. Include OS, JDK, MySQL version, steps, expected behavior and sanitized output.
 
-Use GitHub issues for reproducible non-security problems. Use the private process in [SECURITY.md](SECURITY.md) for vulnerabilities.
+Never share DB credentials, card/PIN values, PAN/Aadhaar identifiers, customer data or unredacted dumps. Report vulnerabilities privately as explained in SECURITY.md.
