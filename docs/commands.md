@@ -1,6 +1,6 @@
 # Developer Commands
 
-Run commands from the project root. There is no Maven/Gradle wrapper today.
+No Maven/Gradle wrapper exists. Run from repository root.
 
 ## Check JDK
 ```bash
@@ -25,12 +25,9 @@ find src -name '*.java' -print0 | xargs -0 javac -cp "lib/mysql-connector-java-8
 ```bash
 java -cp "out:src:lib/mysql-connector-java-8.0.28.jar:lib/jcalendar-tz-1.3.3-4.jar" bank.management.system.login
 ```
-Use semicolons instead of colons in Windows classpaths. MySQL must be running, a matching schema must exist, and local connection settings must be safe.
+Use semicolons rather than colons on Windows. MySQL and a compatible schema are required. Build success is not implied by these commands.
 
-## Clean generated output
+## Clean local output
 ```bash
 rm -rf out
 ```
-PowerShell: `Remove-Item -Recurse -Force out`.
-
-Build/test success is not implied by the existence of these commands.
