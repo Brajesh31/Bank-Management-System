@@ -2,15 +2,14 @@
 
 ```text
 .
-├── .github/                 # Repository workflows and templates
+├── .github/                 # Workflows and templates
 ├── .idea/                   # Existing IntelliJ IDEA metadata
-├── bin/                     # Existing compiled class files
-├── docs/                    # Project, database, QA and security documentation
-├── lib/                     # MySQL Connector/J and JCalendar JARs
+├── bin/                     # Existing compiled classes
+├── docs/                    # Engineering and safety documentation
+├── lib/                     # JDBC and JCalendar JARs
 ├── src/
-│   ├── bank/management/system/
-│   │   └── *.java           # Swing windows and JDBC helper
-│   └── icons/               # PNG resources
+│   ├── bank/management/system/  # Swing screens and JDBC helper
+│   └── icons/                   # PNG resources
 ├── .env.example
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
@@ -21,24 +20,21 @@
 └── SUPPORT.md
 ```
 
-## Java package
-All application Java files use package `bank.management.system`.
+All Java files use package `bank.management.system`.
 
-| File | Responsibility |
+| File | Role |
 |---|---|
 | `login.java` | Entry point and card/PIN login |
 | `conn.java` | JDBC connection helper |
 | `mainClass.java` | Operation menu |
-| `signUp.java`, `signUp2.java`, `signUp3.java` | Three registration screens |
-| `deposit.java` | Deposit operation |
-| `withdraw.java` | Cash withdrawal |
+| `signUp.java`, `signUp2.java`, `signUp3.java` | Registration pages |
+| `deposit.java` | Deposit |
+| `withdraw.java` | Withdrawal |
 | `fastCash.java` | Preset withdrawal |
-| `balanceEnquiry.java` | Balance calculation |
+| `balanceEnquiry.java` | Balance display |
 | `mini.java` | Mini statement |
 | `pin.java` | PIN change |
 
-## Dependencies and assets
-The `lib/` directory bundles Connector/J and JCalendar. Image assets are in `src/icons/` and are loaded as classpath resources.
+Dependencies are bundled under `lib/`; image resources are under `src/icons/`. The tracked `bin/` classes are existing artifacts. Recommended builds use `out/` to avoid overwriting them.
 
-## Generated output
-The repository already tracks `bin/` class files. The recommended build commands compile into `out/` so new local output does not overwrite tracked files. No Maven/Gradle manifest, test tree, SQL migrations, or configuration loader currently exists.
+No Maven/Gradle manifest, test source tree, SQL migration directory, or configuration loader is present.
