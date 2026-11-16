@@ -1,11 +1,23 @@
 # Security Policy
 
-## Prototype limitations
+## Classification
+This is an educational prototype, not production banking software. Never process real customer details, credentials, card data, identity numbers, or financial transactions.
 
-The application currently includes a hardcoded MySQL connection password in `conn.java`, stores and queries PIN values directly, constructs SQL statements through string concatenation in transaction screens, and has no production-grade authorization, auditing, encryption, or transaction isolation. Do not connect it to real accounts or financial data.
+## Known high-risk source conditions
+- Hardcoded MySQL connection credential in `src/bank/management/system/conn.java`.
+- SQL statements assembled by string concatenation.
+- PIN values stored and queried in plain text.
+- PAN/Aadhaar fields collected by registration.
+- Withdrawal balance check and insert are not atomic.
+- No visible production-grade lockout, authorization, audit, or deployment controls.
 
-Before deployment, externalize secrets, hash or tokenize credentials appropriately, use prepared statements, validate numeric amounts, enforce database transactions and authorization, encrypt transport/storage, add audit logs, and protect card/PIN workflows against brute force.
+Assume any committed database credential may be compromised. Rotate it if active outside a disposable local environment. A later commit does not erase secrets from Git history.
+
+## Safe usage
+Use synthetic data and a disposable local database only. Never reuse production/admin passwords, publish database dumps, or share logs with identifiers. Do not connect this code to real customer databases.
 
 ## Reporting
+Do not publish exploitable details in a public issue. Contact the maintainer privately through <https://github.com/brajesh31> with affected path, impact and a sanitized reproduction. Do not attach credentials or personal data.
 
-Do not publish credentials, SQL injection details, or financial data in an issue. Contact Brajesh Kumar privately through <https://github.com/brajesh31> with sanitized reproduction steps, impact, and affected class.
+## Required remediation
+Credential rotation/removal, PreparedStatement, secure credential handling, data minimization and atomic ledger operations are mandatory before any security claim.
