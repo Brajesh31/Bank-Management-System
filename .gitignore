@@ -1,2 +1,23 @@
-node_modules/
+# Local secrets
 .env
+.env.*
+!.env.example
+*.local.properties
+secrets/
+*.pem
+*.key
+
+# Java build output
+out/
+target/
+build/
+*.log
+hs_err_pid*
+
+# IDE and OS noise
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/shelf/
+.DS_Store
+Thumbs.db
