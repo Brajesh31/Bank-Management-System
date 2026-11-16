@@ -1,0 +1,40 @@
+name: 🐛 Bug report
+description: Report a reproducible problem using synthetic data only.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Never include real passwords, card/PIN values, PAN/Aadhaar data, customer records, or database dumps."
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Include the affected screen/class.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: jdk
+    attributes:
+      label: JDK version
+  - type: input
+    id: mysql
+    attributes:
+      label: MySQL version
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Remove credentials and personal identifiers.
