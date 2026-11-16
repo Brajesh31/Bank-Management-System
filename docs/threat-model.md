@@ -1,7 +1,7 @@
 # Threat Model
 
 ## System boundary
-A desktop Swing process uses JDBC to communicate with MySQL. User-entered values are incorporated into SQL by screen handlers. The database credential is embedded in source.
+A desktop Swing process communicates with MySQL over JDBC. UI handlers construct SQL from user values. The database credential is embedded in source.
 
 ```mermaid
 flowchart LR
@@ -14,35 +14,35 @@ flowchart LR
 ```
 
 ## Assets
-- MySQL connection credential.
+- Database connection credential.
 - Personal registration records.
 - PAN/Aadhaar fields.
 - Card numbers and PIN values.
-- Transaction rows and computed balances.
-- Source and bundled dependency binaries.
+- Transaction history and computed balances.
+- Java source and bundled dependencies.
 
 ## Trust boundaries
-1. Text and selections supplied by the user.
-2. Event handler constructing SQL.
-3. Application process authenticating to MySQL.
-4. Database response trusted by presentation logic.
-5. Public repository containing source and binaries.
+1. User input enters Swing forms.
+2. Event handlers build SQL.
+3. Application authenticates to MySQL with a source-controlled credential.
+4. Database results are trusted by UI calculations.
+5. Git distributes source and binaries.
 
 ## Abuse cases
 
-| Threat | Existing weakness | Potential consequence |
+| Threat | Existing weakness | Consequence |
 |---|---|---|
 | SQL injection | String-concatenated SQL | Data disclosure or modification |
-| Credential theft | Embedded DB password | Unauthorized database access |
-| PIN compromise | Plain-text PINs | Account impersonation |
-| Concurrent requests | Non-atomic balance check | Incorrect ledger balance |
-| Accidental data commit | Broad personal-data collection | Identity exposure |
-| Dependency tampering | Bundled JARs without integrity register | Runtime compromise |
+| Credential theft | Hardcoded DB password | Unauthorized database access |
+| PIN theft | Plain-text PIN values | Account impersonation |
+| Concurrent withdrawals | Non-atomic check/write | Incorrect ledger balance |
+| Accidental data commit | Sensitive fields and dumps | Personal-data exposure |
+| Dependency tampering | Bundled JARs without integrity checks | Runtime compromise |
 
-## Limited existing controls
-The login screen uses a password field, and the mini statement masks most of the card number. These do not secure stored credentials, authorize database operations, or protect data at rest.
+## Existing limited controls
+The login uses a password field and mini statement masks much of the card number. These UI choices do not protect stored credentials or database access.
 
-## Required improvements
-Externalized secrets, prepared statements, credential hashing, least-privilege DB account, stable account IDs, atomic ledger writes, input validation, data minimization, encrypted transport/storage, audit records, backup controls, and dependency integrity checks.
+## Required controls
+Externalized secrets, prepared statements, credential hashing, least privilege, stable account IDs, atomic ledger writes, amount validation, data minimization, encrypted transport/storage, audit controls, backups, and dependency integrity checks.
 
-Residual risk remains critical until the source-level issues are fixed and verified.
+Residual risk remains critical until the underlying source is redesigned and tested.
