@@ -1,15 +1,9 @@
-# Deployment
+# Deployment Boundaries
 
-This desktop application should be distributed only to trusted operators and connected to a private database service. Do not expose MySQL to the public internet.
+The current model is a Java Swing desktop process connecting to MySQL over JDBC. There is no API server, web deployment, container, installer package, or production release workflow.
 
-Before deployment:
+A local demo may compile the source and include bundled JAR dependencies. Use synthetic data only.
 
-- remove credentials from `conn.java`;
-- create a least-privilege database user;
-- use TLS for JDBC connections;
-- replace direct PIN storage and SQL concatenation;
-- enable audit logging and backups;
-- validate all transaction amounts and use database transactions;
-- package dependencies reproducibly and verify JAR provenance.
+Production blockers include embedded DB credentials, plaintext PIN handling, SQL concatenation, non-atomic ledger operations, sensitive identity capture, no automated app tests, no audit/monitoring, and no recovery plan.
 
-There is no CI or deployment automation in this repository.
+A production financial system requires a separate architecture and security program. Do not deploy this code as a real banking service. No live URL is advertised because this is desktop software and no runtime demo is verified.
