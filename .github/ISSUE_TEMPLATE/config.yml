@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability reporting
+    url: https://github.com/brajesh31
+    about: Do not publish exploit details or sensitive data in a public issue.
