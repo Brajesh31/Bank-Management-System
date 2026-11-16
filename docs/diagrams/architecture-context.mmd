@@ -1,0 +1,9 @@
+flowchart TB
+ USER([Desktop user]) --> UI[Java Swing windows]
+ UI --> EVENTS[ActionListener handlers]
+ EVENTS --> SCREENS[Registration and transaction screens]
+ SCREENS --> CONN[conn.java]
+ CONN --> DRIVER[MySQL Connector/J]
+ DRIVER --> DB[(MySQL bankSystem)]
+ CAL[JCalendar JAR] -. date chooser .-> SIGNUP[signUp]
+ ASSETS[src/icons PNG assets] -. classpath .-> UI
